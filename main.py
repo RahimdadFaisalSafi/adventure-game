@@ -32,8 +32,14 @@ def main():
         if direction == "norden":
             current_room = "norden"
             result = enter_room("norden")
+            # Man hat die Gelegenheit weiterzugehen
             if isinstance(result, str):
                 print(result)
+            # Wenn man keine richtige Antwort eingibt.
+            elif isinstance(result, bool) and result == False:
+                print('Leider hast du das Spiel verloren.')
+                end_game()
+                
             
         
 if __name__ == '__main__':
